@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Todobedidroid</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="item_name_hint">Todo item</string>
+    <string name="new_subtask_lbl">New subtask</string>
+    <string name="new_subtask_btn">Add</string>
+    <string name="time_est_lbl">Time estimation</string>
+    <string name="time_spent_lbl">Time spent</string>
+    <string name="tags_lbl">Tags</string>
+    <string name="notes_lbl">Tags</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="ok_btn">OK</string>
+
 </resources>

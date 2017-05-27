@@ -1,9 +1,133 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Add/Edit/View todobedido item -->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_detail"
-    style="?android:attr/textAppearanceLarge"
+    android:id="@+id/detail_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:textIsSelectable="true"
-    tools:context="org.example.todobedidroid.ItemDetailFragment" />
+    tools:context="org.example.todobedidroid.ItemDetailFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/new_subtask_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/new_subtask_btn"
+            android:maxLines="1"
+            android:hint="@string/new_subtask_lbl"/>
+        <Button
+            android:id="@+id/new_subtask_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/new_subtask_btn"/>
+        <TextView
+            android:id="@+id/time_est_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/new_subtask_input"
+            android:layout_alignParentStart="true"
+            android:text="@string/time_est_lbl"
+            android:labelFor="@+id/time_est_btn"/>
+        <Button
+            android:id="@+id/time_est_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_est_lbl"
+            android:layout_alignParentStart="true"
+            android:text="02:30"/>
+        <TextView
+            android:id="@+id/time_spent_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_est_btn"
+            android:layout_alignParentStart="true"
+            android:text="@string/time_spent_lbl"
+            android:labelFor="@+id/time_spent_btn"/>
+        <Button
+            android:id="@+id/time_spent_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_spent_lbl"
+            android:layout_alignParentStart="true"
+            android:text="02:12"/>
+        <TextView
+            android:id="@+id/tags_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_spent_btn"
+            android:layout_alignParentStart="true"
+            android:text="@string/tags_lbl"
+            android:labelFor="@+id/tags_btn"/>
+
+        <!-- leads to multiple-answer checklist, if 'new' is checked then add new tag -->
+        <Button
+            android:id="@+id/tags_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tags_lbl"
+            android:layout_alignParentStart="true"
+            android:text="tag1, tag2, tag3"/>
+        <TextView
+            android:id="@+id/deadline_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tags_btn"
+            android:layout_alignParentStart="true"
+            android:text="This is a placeholder for where the deadline thingies will appear :D"/>
+        <TextView
+            android:id="@+id/reminder_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/deadline_placeholder"
+            android:layout_alignParentStart="true"
+            android:text="This is a placeholder for where the reminder thingies will appear!"/>
+        <TextView
+            android:id="@+id/notes_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reminder_placeholder"
+            android:layout_alignParentStart="true"
+            android:text="@string/notes_lbl"
+            android:labelFor="@+id/notes_input"/>
+        <EditText
+            android:id="@+id/notes_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notes_lbl"
+            android:layout_alignParentStart="true"
+            android:inputType="textMultiLine"
+            android:hint="@string/new_subtask_lbl"/>
+
+        <!-- TODO Make this a proper floating bottom bar thingy -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            style="?android:attr/buttonBarStyle">
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel_btn"
+                style="?android:attr/buttonBarButtonStyle"/>
+            <Button
+                android:id="@+id/ok_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ok_btn"
+                style="?android:attr/buttonBarButtonStyle"/>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

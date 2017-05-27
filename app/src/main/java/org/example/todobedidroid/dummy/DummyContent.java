@@ -55,18 +55,18 @@ public class DummyContent {
      */
     public static class DummyItem {
         public final String id;
-        public final String content;
-        public final String details;
+        public final String name;
+        public final String note;
 
-        public DummyItem(String id, String content, String details) {
+        public DummyItem(String id, String name, String details) {
             this.id = id;
-            this.content = content;
-            this.details = details;
+            this.name = name;
+            this.note = details;
         }
 
         @Override
         public String toString() {
-            return content;
+            return name;
         }
     }
 }
